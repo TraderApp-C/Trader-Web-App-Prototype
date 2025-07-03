@@ -1,0 +1,26 @@
+
+.btn {
+    background-color: rgba(17, 17, 192, 0.5);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 16px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: rgba(17, 17, 192, 1);
+  }
+  
+  .btn:disabled {
+    background-color: rgba(17, 17, 192, 0.3);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  button:focus {
+    outline: none;
+    border: none; /* If a border is showing on focus */
+  }
