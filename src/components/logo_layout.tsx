@@ -14,6 +14,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => (
         display: 'flex',
         alignItems: 'center',
         padding: '0 1rem',
+
+        
         boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
         zIndex: 1000,
       }}>
