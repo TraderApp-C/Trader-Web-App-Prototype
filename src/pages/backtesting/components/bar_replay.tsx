@@ -16,7 +16,7 @@ const BarReplayButton: React.FC<BarReplayProps> = ({ref}) => {
     const dispatch = useDispatch();
     const isPlaying = useSelector((state: RootState) => state.chartSlice.isPlaying);
     return <>
-     <button onClick={() => {
+     <button style={{backgroundColor: '#1a1a1a', color: 'white'}} onClick={() => {
             if(store.getState().chartSlice.isPlaying) {
               dispatch(playTillEnd(false));
               return;  
@@ -46,7 +46,7 @@ const BarReplayButton: React.FC<BarReplayProps> = ({ref}) => {
             }, 100);
             
           }}>
-            {isPlaying ? <FaPause /> : <FaPlay />} {isPlaying ? i18n.t("chart_backtesting_pause") : i18n.t("chart_backtesting_play")}
+            {isPlaying ? <FaPause style={{color: 'white'}} /> : <FaPlay style={{color: 'white'}} />} {isPlaying ? i18n.t("chart_backtesting_pause") : i18n.t("chart_backtesting_play")}
             </button></>
 };
 

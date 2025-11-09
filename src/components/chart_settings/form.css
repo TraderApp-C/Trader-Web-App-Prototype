@@ -26,3 +26,8 @@
     color: aliceblue;
 
 }
+.custom-date-input {
+    border: 1px solid #ccc;
+    background-color: #3b3b3a;
+    color: white;
+}

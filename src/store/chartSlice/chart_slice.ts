@@ -34,10 +34,7 @@ export const fetchCandleStickData = createAsyncThunk<
   'chart/fetchCandleStickData',
   async ({ symbol, multiplier, timespan, from, to }, thunkAPI) => {
     try {
-        // console.log("fetching OHLC data")
-        //    console.log("start date ", from)
-        //    console.log("end date ", to)
-        //    console.log("timespan is ", times)
+    
       const data = await fetchCandles(symbol, multiplier, timespan, from, to);
       return data;
     } catch (error) {
@@ -114,11 +111,6 @@ const chartSlice = createSlice({
         .addCase(fetchCandleStickData.fulfilled, (state, action: PayloadAction<CandleStick[]>) => {
           state.data = action.payload ?? []
           state.loading = false;
-          console.log("candlestick completed ", state.data.length)
-          console.log("last is: ", state.data[state.data.length - 1])
-          
-          
-          
         })
         .addCase(fetchCandleStickData.rejected, (state, action: PayloadAction<any>) => {
           state.loading = false;

@@ -6,4 +6,6 @@
     width: 100%;  /* Ensure full width or adjust to your needs */
     font-size: 16px;
     box-sizing: border-box;  /* Ensure padding is included in width */
+    background-color: #3b3b3a;
+    color: white;
   }

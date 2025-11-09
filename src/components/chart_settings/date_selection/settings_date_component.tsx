@@ -30,6 +30,7 @@ const DatePickerWithTitle: React.FC<DatePickerWithTitleProps> = ({
         endDate={endDate}
         placeholderText={placeholderText}
         selectsStart
+        className="custom-date-input"
         dateFormat="MMMM d, yyyy"
         popperPlacement="bottom-start"
         renderCustomHeader={({

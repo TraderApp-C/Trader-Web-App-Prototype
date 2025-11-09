@@ -57,6 +57,9 @@ const ChartSettingsDate: React.FC<ChartSettingsDateProps> = ({onNext, onPrevious
       />
 
         <TipsList/>
+        
+    <p style={{textAlign: 'left', color: 'white', fontSize: 20, fontWeight: '500' }}>{i18n.t('chart_data_3_note')}</p>
+
     
     <div style={{ flexGrow: 1 }} />
 

@@ -115,6 +115,22 @@ const BacktestingChart: React.FC = () => {
       };
   }, [state.data]);
 
+
+  useEffect(() => {
+  if (!candlestickSeriesRef.current) return;
+
+  if(priceSlice.firstLine != null) {
+    candlestickSeriesRef.current!.createPriceLine(priceSlice.firstLine?.options!);
+  }
+  if(priceSlice.secondLine != null) {
+    candlestickSeriesRef.current!.createPriceLine(priceSlice.secondLine?.options!);
+  }
+   
+      
+  
+}, [priceSlice.triggerValue]);
+  
+
   return <div style={{ width: '100vw', height: '100vh', display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'}}>
@@ -128,24 +144,25 @@ const BacktestingChart: React.FC = () => {
       <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
         {/* Ticker symbol and timespan dropdown */}
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center'}}>
-          <button style={{fontSize: '18px', marginBottom: '16px'}} >{tickerSlice.selectedItem!.ticker}</button>
+          <button style={{fontSize: '18px', marginBottom: '16px', backgroundColor: 'black', color: 'white'}} >{tickerSlice.selectedItem!.ticker}</button>
          <TimespanDropdown />
         </div>
 
         <ClearLinesButton ref={candlestickSeriesRef.current!}/>
 
          <FormControlLabel
-         style={{paddingBottom: '12px', marginLeft: '16px'}}
+         style={{paddingBottom: '12px', marginLeft: '16px', color: 'white'}}
           control={
             <Switch
               checked={priceSlice.drawingEnabled}
+              
               onChange={() => dispatch(toggleDrawing())}/>
           }
           label={i18n.t("chat_drawing_enabled")}/>
 
           {state.loading ? (<div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', paddingBottom: '12px'}}>
-            <p style={{paddingRight: '12px'}}>{i18n.t("chart_loading_data")}</p> 
-            <CircularProgress />
+            <p style={{paddingRight: '12px', color: 'white'}}>{i18n.t("chart_loading_data")}</p> 
+            <CircularProgress style={{color: 'white'}}/>
           </div>) : (<></>)}
 
         {/* Replay buttons, placed at the end */}
@@ -157,7 +174,7 @@ const BacktestingChart: React.FC = () => {
             ref={candlestickSeriesRef.current!}
             />
 
-            <button onClick={() => dispatch(toggleInfoDialog())}><FaQuestion/></button>
+            <button style={{backgroundColor: '#1a1a1a'}} onClick={() => dispatch(toggleInfoDialog())}><FaQuestion style={{color: 'white'}}/></button>
         </div>
 
       </div>      

@@ -16,7 +16,7 @@ const PlaySingleBarButton: React.FC<SingleBarProps> = ({ref}) => {
     const dispatch = useDispatch();
   return (
     <>
-     <button onClick={() => {
+     <button style={{backgroundColor: '#1a1a1a'}} onClick={() => {
         const state = store.getState().chartSlice; 
         const bars = extractBars(state, 1);
         const formattedData = formatCandleData(bars)
@@ -30,7 +30,7 @@ const PlaySingleBarButton: React.FC<SingleBarProps> = ({ref}) => {
         dispatch(removeRemaining(1))
         }
     
-    }}><FaForwardStep /></button>
+    }}><FaForwardStep style={{color: 'white'}}/></button>
     </>
   );
 };

@@ -14,7 +14,8 @@ interface PriceState {
     secondLine: TradingPriceLine | null,
     dialogVisible: boolean,
     dialogMessage: string | null,
-    infoDialog: boolean
+    infoDialog: boolean,
+    triggerValue: number,
 }
 
 const initialState: PriceState = {
@@ -23,7 +24,8 @@ const initialState: PriceState = {
     secondLine: null,
     dialogVisible: false,
     dialogMessage: null,
-    infoDialog: false
+    infoDialog: false,
+    triggerValue: 0
 }
 
 const priceSlice = createSlice({
@@ -74,10 +76,12 @@ const priceSlice = createSlice({
                 state.dialogMessage = i18n.t("bottom_line_breached")
                 state.dialogVisible = true
             }
-            
+        },
+        redrawLines: (state) => {
+            state.triggerValue += 1
         }
         
     },
 })
-export const {setPriceLine, toggleDrawing, clearLines, setPriceDialog, hidePriceDialog, checkCandlestick, toggleInfoDialog} = priceSlice.actions
+export const {setPriceLine, toggleDrawing, clearLines, setPriceDialog, hidePriceDialog, checkCandlestick, toggleInfoDialog, redrawLines} = priceSlice.actions
 export default priceSlice.reducer;

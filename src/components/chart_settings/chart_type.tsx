@@ -19,7 +19,9 @@ const ChartType: React.FC<ChartTypeProps> = ({normalClick}) => {
 
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', width: '100%', paddingBottom: '20px'}}>
-      <h3>{i18n.t("chart_type_title")}</h3>
+      <h3 style={{ color: "#FFFFFF" }}>
+          {i18n.t("chart_type_title")}
+      </h3>
       <div style={{display: 'flex', flexDirection: 'row', paddingBottom: '6px'}}>
         <AppButton
         onClick={() => {

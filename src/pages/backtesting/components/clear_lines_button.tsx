@@ -25,7 +25,7 @@ const ClearLinesButton: React.FC<ClearLinesProps> = ({ref}) => {
             }
             dispatch(clearLines())
 
-        }} style={{marginBottom: '16px', marginLeft: '16px'}}> <FaTrash /> {i18n.t("chart_clear_lines")}</button>
+        }} style={{marginBottom: '16px', marginLeft: '16px', backgroundColor: 'black', color: 'white'}}> <FaTrash /> {i18n.t("chart_clear_lines")}</button>
     );
 };
 
